@@ -10,12 +10,6 @@ class CityController {
     } catch (error) {
       next(error);
     }
-    // const city = await City.findOne({ where: { value } });
-    // if (!city) {
-    //   const newCity = await City.create({ value });
-    //   console.log(newCity);
-    //   return res.json(newCity);
-    // }
   }
 
   async checkCity(req, res, next) {
