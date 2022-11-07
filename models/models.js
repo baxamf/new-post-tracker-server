@@ -18,7 +18,7 @@ const Token = sequelize.define("token", {
 
 const Ttn = sequelize.define("ttn", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-  value: { type: DataTypes.STRING, unique: true },
+  value: { type: DataTypes.STRING, unique: false },
 });
 
 const City = sequelize.define("city", {
@@ -33,6 +33,10 @@ const Warhouse = sequelize.define("warhouse", {
 
 User.hasOne(Token);
 Token.belongsTo(User);
+
+User.hasMany(Ttn);
+Ttn.belongsTo(User);
+
 City.hasMany(Warhouse);
 Warhouse.belongsTo(City);
 
